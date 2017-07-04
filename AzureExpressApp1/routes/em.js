@@ -1,10 +1,26 @@
 ﻿'use strict';
 var express = require('express');
 var router = express.Router();
+var settings = require('../GlobalSettings')
+var mongoClient = require('mongodb').MongoClient;
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('em', { title: 'EarningManager' });
+    mongoClient.connect(process.env.MONGODB_URI || settings.defaultDB, function (err, db) {
+        if (err) throw err
+        var all = db.collection('earningmanagement').find();
+        all.toArray(function (err, results) {
+            if (err != null) {
+                res.render('error', {
+                    message: err.message,
+                    error: err
+                });
+            }
+            else {
+                res.render('em', { title: 'Stock Shares Dashboard', stocks: results });
+            }
+        });
+    })
 });
 
 module.exports = router;
