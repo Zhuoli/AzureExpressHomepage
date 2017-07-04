@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('cstock', { title: 'Cstock' });
+    res.render('cstock', { title: 'Cstock', stocks : [] });
 });
 
 module.exports = router;

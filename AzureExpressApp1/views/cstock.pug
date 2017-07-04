@@ -3,3 +3,12 @@
 block content
   h1= title
   p Welcome to #{title}
+  div
+  table
+    thead
+      tr: th Chinese Stock Table
+    tbody
+      each stock, i in stocks
+        tr(class=(i % 2 == 0) ? 'odd' : 'even') 
+          td
+            a(href='/admin/post/' + stock.id) #{stock.author} - #{stock.title}
