@@ -1,14 +1,16 @@
 ﻿extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div
-  table
-    thead
-      tr: th Chinese Stock Table
-    tbody
-      each stock, i in stocks
-        tr(class=(i % 2 == 0) ? 'odd' : 'even') 
-          td
-            a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id} - #{stock.companyName}
+	h1= title
+	div
+		table
+			tr
+				th Symbol
+				th CompanyName
+				th CurrentPrice
+			each stock, i in stocks
+				tr
+					td #[a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id}]
+					td #{stock.companyName}
+					td #{stock.currentPrice}
+	

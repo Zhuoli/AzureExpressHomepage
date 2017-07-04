@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
                 });
             }
             else {
-                res.render('cstock', { title: 'Cstock', stocks: results });
+                res.render('cstock', { title: 'Chinese Stock Dashboard', stocks: results });
             }
         });
     })
