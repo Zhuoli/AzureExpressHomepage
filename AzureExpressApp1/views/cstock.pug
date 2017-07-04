@@ -11,4 +11,4 @@ block content
       each stock, i in stocks
         tr(class=(i % 2 == 0) ? 'odd' : 'even') 
           td
-            a(href='/admin/post/' + stock._id) #{stock._id} - #{stock.companyName}
+            a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id} - #{stock.companyName}
