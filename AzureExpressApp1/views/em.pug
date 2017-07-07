@@ -7,14 +7,14 @@ block content
 			tr
 				th Symbol
 				th CompanyName
-				th TradeInPrice
-				th TradeInVolumn
+				th sharedAverageCost
+				th shares
 				th CurrentPrice
 			each stock, i in stocks
 				tr
 					td #[a(href='http://www.nasdaq.com/symbol/' + stock._id) #{stock._id}]
 					td #{stock.companyName}
-					td #{stock.tradeinprice}
-					td #{stock.tradeinnumber}
+					td #{stock.sharedAverageCost}
+					td #{stock.shares}
 					td #{stock.currentPrice}
 	
