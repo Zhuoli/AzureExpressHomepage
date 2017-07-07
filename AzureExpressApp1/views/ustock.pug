@@ -1,16 +1,23 @@
 ﻿extends layout
 
 block content
-	h1= title
-	div
-		table
-			tr
-				th Symbol
-				th CompanyName
-				th CurrentPrice
-			each stock, i in stocks
-				tr
-					td #[a(href='http://www.nasdaq.com/symbol/' + stock._id) #{stock._id}]
-					td #{stock.companyName}
-					td #{stock.currentPrice}
-	
+  h1= title
+  div
+    table#keywords(data-role="table")&attributes({'data-mode': 'columntoggle'}, {'data-filter': 'true'}, {'data-input': '#filterTable-input'})
+      thead
+        tr
+          th(data-priority="3") Symbol
+          th(data-priority="2") CompanyName
+          th(data-priority="1") CurrentPrice
+          th PE
+          th PB
+          th lastUpdatedTime
+        each stock, i in stocks
+          tbody
+            tr
+              td #[a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id}]
+              td #{stock.companyname}
+              td #{stock.currentPrice}
+              td #{stock.price2EarningRatio}
+              td #{stock.price2BookRatio}
+              td #{stock.lastUpdatedTime}
