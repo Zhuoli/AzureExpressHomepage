@@ -6,7 +6,6 @@ block content
     table
       tr
         th Symbol
-        th Company name
         th Shared average cost
         th Shares
         th Current price
@@ -14,7 +13,6 @@ block content
       each stock, i in stocks
         tr
           td #[a(href='http://www.nasdaq.com/symbol/' + stock._id) #{stock._id}]
-          td #{stock.companyName}
           td #{stock.sharedAverageCost}
           td #{stock.shares}
           td #{stock.currentPrice}
