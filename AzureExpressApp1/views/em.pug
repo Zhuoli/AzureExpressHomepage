@@ -1,20 +1,23 @@
 ﻿extends layout
 
 block content
-	h1= title
-	div
-		table
-			tr
-				th Symbol
-				th CompanyName
-				th sharedAverageCost
-				th shares
-				th CurrentPrice
-			each stock, i in stocks
-				tr
-					td #[a(href='http://www.nasdaq.com/symbol/' + stock._id) #{stock._id}]
-					td #{stock.companyName}
-					td #{stock.sharedAverageCost}
-					td #{stock.shares}
-					td #{stock.currentPrice}
-	
+  h1= title
+  div
+    table
+      tr
+        th Symbol
+        th Company name
+        th Shared average cost
+        th Shares
+        th Current price
+        th Earing report date
+      each stock, i in stocks
+        tr
+          td #[a(href='http://www.nasdaq.com/symbol/' + stock._id) #{stock._id}]
+          td #{stock.companyName}
+          td #{stock.sharedAverageCost}
+          td #{stock.shares}
+          td #{stock.currentPrice}
+          td
+            if stock.reportDate
+              #{stock.reportDate.month}/#{stock.reportDate.day}/#{stock.reportDate.year}
