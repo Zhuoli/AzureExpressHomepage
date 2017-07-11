@@ -31,6 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="db\index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="db\users.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalSettings.js">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +45,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\login.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\users.js" />
     <Compile Include="routes\ustock.js">
       <SubType>Code</SubType>
@@ -47,6 +56,9 @@
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
     <Content Include="views\em.pug" />
+    <Content Include="views\login.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\ustock.pug" />
     <Content Include="views\cstock.pug">
       <SubType>Code</SubType>
@@ -57,6 +69,7 @@
     <None Include="ZhuoliAzureExpressVS - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="db\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
