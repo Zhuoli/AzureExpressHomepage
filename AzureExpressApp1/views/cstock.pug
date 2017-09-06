@@ -16,17 +16,17 @@ style.
 div(data-role="main").ui-content
 form
     input#filterTable-input(data-type="search", laceholder="Search...")
-table#keywords(data-role="table", data-mode="columntoggle", data-filter="true", data-input="#filterTable-input")
+table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode="columntoggle", data-filter="true", data-input="#filterTable-input")
     thead
-    tr
+      tr
         th(data-priority="1") Symbol
         th(data-priority="2") CompanyName
         th(data-priority="3") CurrentPrice
         th(data-priority="4") PE
         th(data-priority="5") PB
         th(data-priority="6") lastUpdatedTime
-    each stock, i in stocks
-        tbody
+    tbody    
+      each stock, i in stocks
         tr
             td #[a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id}]
             td #{stock.companyname}
@@ -36,4 +36,6 @@ table#keywords(data-role="table", data-mode="columntoggle", data-filter="true", 
             td #{stock.lastUpdatedTime}
 
 script.
-  $('#keywords').tablesorter();
+  $(document).ready(function() { 
+    $('#keywords').tablesorter();
+  });
