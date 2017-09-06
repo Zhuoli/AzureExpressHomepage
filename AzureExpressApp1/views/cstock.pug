@@ -4,10 +4,11 @@ script(src="https://code.jquery.com/jquery-1.11.3.min.js")
 script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
 script(src="javascripts/jquery.tablesorter/jquery.tablesorter.min.js")
 h1= title
-style.
-  th {
-      border-bottom: 1px solid #d6d6d6,
-      cursor: pointer,
+style(type="text/css").
+  th:hover{
+      background-color: gold;
+      border-bottom: 1px solid #d6d6d6;
+      cursor: pointer;
       cursor: hand
   }
   tr:nth-child(even) {
@@ -16,7 +17,7 @@ style.
 div(data-role="main").ui-content
 form
     input#filterTable-input(data-type="search", laceholder="Search...")
-table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode="columntoggle", data-filter="true", data-input="#filterTable-input")
+table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode="columntoggle", data-filter="true", data-input="#filterTable-input", cellspacing="1")
     thead
       tr
         th(data-priority="1") Symbol
