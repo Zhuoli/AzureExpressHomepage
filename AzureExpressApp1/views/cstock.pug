@@ -25,7 +25,8 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
         th(data-priority="3") CurrentPrice
         th(data-priority="4") PE
         th(data-priority="5") PB
-        th(data-priority="6") lastUpdatedTime
+        th(data-priority="6") IPO-Date
+        th(data-priority="7") lastUpdatedTime
     tbody    
       each stock, i in stocks
         tr
@@ -34,6 +35,7 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
             td #{stock.currentPrice}
             td #{stock.price2EarningRatio}
             td #{stock.price2BookRatio}
+            td #{stock.dateFirstIPO}
             td #{stock.lastUpdatedTime}
 
 script.
