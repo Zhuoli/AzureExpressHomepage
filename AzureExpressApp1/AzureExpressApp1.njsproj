@@ -112,6 +112,7 @@
     <Content Include="public\javascripts\jquery.tablesorter\themes\green\green.zip" />
     <Content Include="public\javascripts\jquery.tablesorter\themes\green\style.css" />
     <Content Include="public\stylesheets\main.css" />
+    <Content Include="public\stylesheets\omega-style.css" />
     <Content Include="README.md" />
     <Content Include="views\em.pug" />
     <Content Include="views\login.pug">

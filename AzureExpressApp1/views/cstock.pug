@@ -1,9 +1,10 @@
 ﻿<meta name="viewport" content="main, width=device-width, initial-scale=1">
 link(href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css", rel="stylesheet")
+link(href="stylesheets/omega-style.css", rel="stylesheet")
+
 script(src="https://code.jquery.com/jquery-1.11.3.min.js")
 script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
 script(src="javascripts/jquery.tablesorter/jquery.tablesorter.min.js")
-h1= title
 style(type="text/css").
   th:hover{
       background-color: gold;
@@ -14,6 +15,14 @@ style(type="text/css").
   tr:nth-child(even) {
       background: #e9e9e9;
   }
+ul.menu.omega-nav-menu.menu-primary
+  li.page_item.page-item-13
+    a(href="http://data.10jqka.com.cn/") 同花顺数据
+header#header.site-header(role="banner", itemscope="itemscope", itemtype="http://schema.org/WPHeader")
+  div.wrap
+    div.title-area
+      h1.site-title(itemprop="headline")= title
+
 div(data-role="main").ui-content
 form
     input#filterTable-input(data-type="search", laceholder="Search...")
