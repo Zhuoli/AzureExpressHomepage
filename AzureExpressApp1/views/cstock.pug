@@ -29,10 +29,16 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
         th(data-priority="7") lastUpdatedTime
     tbody    
       each stock, i in stocks
+        - var colorPrice = "black"
+        if stock.currentPrice > stock.openPrice
+          - var colorPrice = "red"
+        if stock.currentPrice < stock.openPrice
+          - var colorPrice = 'green'
         tr
             td #[a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id}]
             td #{stock.companyname}
-            td #{stock.currentPrice}
+            td  
+              font(color=colorPrice) #{stock.currentPrice}
             td #{stock.price2EarningRatio}
             td #{stock.price2BookRatio}
             td #{stock.dateFirstIPO}
