@@ -50,7 +50,7 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
           - var colorPrice = 'green'
         tr  
             td #[a(href='http://stockpage.10jqka.com.cn/' + stock._id.substring(2) + '/') #{stock._id}]
-            td #{stock.companyname}
+            td #[a(href='http://www.iwencai.com/stockpick/search?typed=1&preParams=&ts=1&f=1&qs=index_rewrite&selfsectsn=&querytype=&searchfilter=&tid=stockpick&w=' + stock._id.substring(2)) #{stock.companyname}]
             td 
               font(color=colorPrice) #{stock.changePercent}
             td  
