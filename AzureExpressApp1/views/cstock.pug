@@ -44,12 +44,12 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
     tbody    
       each stock, i in stocks
         - var colorPrice = "black"
-        if stock.currentPrice > stock.openPrice
+        if stock.changePercent && stock.changePercent.startsWith("+")
           - var colorPrice = "red"
-        if stock.currentPrice < stock.openPrice
+        if stock.changePercent && stock.changePercent.startsWith("-")
           - var colorPrice = 'green'
-        tr
-            td #[a(href='http://finance.sina.com.cn/realstock/company/' + stock._id + '/nc.shtml') #{stock._id}]
+        tr  
+            td #[a(href='http://stockpage.10jqka.com.cn/' + stock._id.substring(2) + '/') #{stock._id}]
             td #{stock.companyname}
             td 
               font(color=colorPrice) #{stock.changePercent}
