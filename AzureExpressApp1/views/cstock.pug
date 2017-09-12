@@ -41,6 +41,7 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
         th(data-priority="3") 现价
         th(data-priority="4") PE
         th(data-priority="5") PB
+        th(data-priority="9") 板块概念
         th(data-priority="6") 上市日期
         th(data-priority="7") lastUpdatedTime
     tbody    
@@ -59,6 +60,7 @@ table#keywords.ui-responsive.ui-shadow.tablesorter(data-role="table", data-mode=
               font(color=colorPrice) #{stock.currentPrice}
             td #{stock.price2EarningRatio}
             td #{stock.price2BookRatio}
+            td #{stock.concepts}
             td #{stock.dateFirstIPO}
             td #{stock.lastUpdatedTime}
 
