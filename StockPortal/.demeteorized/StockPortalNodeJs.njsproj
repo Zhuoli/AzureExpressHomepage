@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2765f263-7e07-4d5f-a8c9-c6800759abd5}</ProjectGuid>
+    <ProjectHome>bundle\</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>main.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>True</StartWebBrowser>
+    <Environment>MONGO_URL=mongodb://127.0.0.1:3001/meteor
+PORT=8080
+ROOT_URL=http://localhost:8080</Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".node_version.txt" />
+    <Content Include="star.json" />
+    <Compile Include="main.js" />
+    <Content Include="server\.bundle_version.txt" />
+    <Content Include="programs\server\config.json" />
+    <Content Include="programs\server\npm-rebuilds.json" />
+    <Content Include="programs\server\npm-shrinkwrap.json" />
+    <Content Include="programs\server\package.json" />
+    <Content Include="programs\server\program.json" />
+    <Compile Include="programs\server\boot-utils.js" />
+    <Compile Include="programs\server\boot.js" />
+    <Compile Include="programs\server\mini-files.js" />
+    <Compile Include="programs\server\npm-rebuild-args.js" />
+    <Compile Include="programs\server\npm-rebuild.js" />
+    <Compile Include="programs\server\npm-require.js" />
+    <Compile Include="programs\server\profile.js" />
+    <Compile Include="programs\server\server-json.js" />
+    <Content Include="programs\web.browser\head.html" />
+    <Content Include="programs\web.browser\9c6071f5d3349fd6c52e422563de80b1f28826a8.stats.json" />
+    <Content Include="programs\web.browser\program.json" />
+    <Compile Include="programs\web.browser\9c6071f5d3349fd6c52e422563de80b1f28826a8.js" />
+    <Compile Include="programs\server\app\app.js" />
+    <Compile Include="programs\server\packages\allow-deny.js" />
+    <Compile Include="programs\server\packages\autopublish.js" />
+    <Compile Include="programs\server\packages\autoupdate.js" />
+    <Compile Include="programs\server\packages\babel-compiler.js" />
+    <Compile Include="programs\server\packages\babel-runtime.js" />
+    <Compile Include="programs\server\packages\base64.js" />
+    <Compile Include="programs\server\packages\binary-heap.js" />
+    <Compile Include="programs\server\packages\blaze-html-templates.js" />
+    <Compile Include="programs\server\packages\blaze.js" />
+    <Compile Include="programs\server\packages\boilerplate-generator.js" />
+    <Compile Include="programs\server\packages\callback-hook.js" />
+    <Compile Include="programs\server\packages\check.js" />
+    <Compile Include="programs\server\packages\ddp-client.js" />
+    <Compile Include="programs\server\packages\ddp-common.js" />
+    <Compile Include="programs\server\packages\ddp-server.js" />
+    <Compile Include="programs\server\packages\ddp.js" />
+    <Compile Include="programs\server\packages\deps.js" />
+    <Compile Include="programs\server\packages\diff-sequence.js" />
+    <Compile Include="programs\server\packages\dynamic-import.js" />
+    <Compile Include="programs\server\packages\ecmascript-runtime-server.js" />
+    <Compile Include="programs\server\packages\ecmascript-runtime.js" />
+    <Compile Include="programs\server\packages\ecmascript.js" />
+    <Compile Include="programs\server\packages\ejson.js" />
+    <Compile Include="programs\server\packages\es5-shim.js" />
+    <Compile Include="programs\server\packages\geojson-utils.js" />
+    <Compile Include="programs\server\packages\global-imports.js" />
+    <Compile Include="programs\server\packages\hot-code-push.js" />
+    <Compile Include="programs\server\packages\htmljs.js" />
+    <Compile Include="programs\server\packages\id-map.js" />
+    <Compile Include="programs\server\packages\insecure.js" />
+    <Compile Include="programs\server\packages\jquery.js" />
+    <Compile Include="programs\server\packages\launch-screen.js" />
+    <Compile Include="programs\server\packages\livedata.js" />
+    <Compile Include="programs\server\packages\logging.js" />
+    <Compile Include="programs\server\packages\meteor-base.js" />
+    <Compile Include="programs\server\packages\meteor.js" />
+    <Compile Include="programs\server\packages\minimongo.js" />
+    <Compile Include="programs\server\packages\mobile-experience.js" />
+    <Compile Include="programs\server\packages\modules-runtime.js" />
+    <Compile Include="programs\server\packages\modules.js" />
+    <Compile Include="programs\server\packages\mongo-id.js" />
+    <Compile Include="programs\server\packages\mongo.js" />
+    <Compile Include="programs\server\packages\npm-mongo.js" />
+    <Compile Include="programs\server\packages\observe-sequence.js" />
+    <Compile Include="programs\server\packages\ordered-dict.js" />
+    <Compile Include="programs\server\packages\promise.js" />
+    <Compile Include="programs\server\packages\random.js" />
+    <Compile Include="programs\server\packages\reactive-var.js" />
+    <Compile Include="programs\server\packages\reload.js" />
+    <Compile Include="programs\server\packages\retry.js" />
+    <Compile Include="programs\server\packages\routepolicy.js" />
+    <Compile Include="programs\server\packages\shell-server.js" />
+    <Compile Include="programs\server\packages\spacebars.js" />
+    <Compile Include="programs\server\packages\standard-minifier-css.js" />
+    <Compile Include="programs\server\packages\standard-minifier-js.js" />
+    <Compile Include="programs\server\packages\templating-compiler.js" />
+    <Compile Include="programs\server\packages\templating-runtime.js" />
+    <Compile Include="programs\server\packages\templating.js" />
+    <Compile Include="programs\server\packages\tracker.js" />
+    <Compile Include="programs\server\packages\ui.js" />
+    <Compile Include="programs\server\packages\underscore.js" />
+    <Compile Include="programs\server\packages\webapp-hashing.js" />
+    <Compile Include="programs\server\packages\webapp.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="programs" />
+    <Folder Include="programs\server" />
+    <Folder Include="programs\server\app" />
+    <Folder Include="programs\server\npm" />
+    <Folder Include="programs\server\packages" />
+    <Folder Include="programs\web.browser" />
+    <Folder Include="server" />
+    <Folder Include="StockPortalNodeJs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
