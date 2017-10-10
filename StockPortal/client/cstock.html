@@ -1,0 +1,67 @@
+<template name="cstock">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="nav navbar-nav navbar-right">
+				{{> loginButtons}}
+			</div>
+			<div class="navbar-header">
+				<p class="navbar-brand" href="#">StockPortal</p>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="page_item page-item-12">
+					<a href="http://www.cninfo.com.cn/cninfo-new/index"> 巨潮资讯</a>
+			  	</li>
+			  	<li class="page_item page-item-13">
+			    	<a href="http://data.10jqka.com.cn/"> 同花顺数据</a>
+				</li>
+				<li class="page_item page-item-14">
+					<a href="https://bigquant.com/"> 量化投资</a>
+				</li>
+			  	<li class="page_item page-item-15">
+			    	<a href="http://quant.10jqka.com.cn/platform/html/strategylib.html#/">MindGo</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div data-role="main" class="main container">
+		<form>
+	    	<input id="filterTable-input" data-type="search" laceholder="Search...">
+	    </form>
+		<table id="keywords" class="ui-responsive ui-shadow tablesorter" data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" cellspacing="1">
+			<thead>
+	  			<tr>
+	    			<th data-priority="1">股票代码</th>
+	    			<th data-priority="2">股票名称</th>
+	    			<th data-priority="8">涨跌幅</th>
+	    			<th data-priority="3">现价</th>
+	    			<th data-priority="4">PE</th>
+	    			<th data-priority="5">PB</th>
+	    			<th data-priority="9">板块概念</th>
+	    			<th data-priority="6">上市日期</th>
+	    			<th data-priority="7">lastUpdatedTime</th>
+	    		</tr>
+	    	</thead>
+			<tbody>    
+		      	{{#each stocks}}
+		        - var colorPrice = "black"
+		        if stock.changePercent && stock.changePercent.startsWith("+")
+		          - var colorPrice = "red"
+		        if stock.changePercent && stock.changePercent.startsWith("-")
+		          - var colorPrice = 'green'
+		        <tr>  
+		            <td title="问财大数据"><a href='http://www.iwencai.com/stockpick/search?typed=1&preParams=&ts=1&f=1&qs=index_rewrite&selfsectsn=&querytype=&searchfilter=&tid=stockpick&w=' + stock._id.substring(2)>{{stock._id}}</a></td>
+		            <td title="股票走势"><a href='http://stockpage.10jqka.com.cn/{{_id}}.substring(2)/{{companyname}}'></a></td>
+		            <td>{{changePercent}}</td>
+		            <td>{{stock.currentPrice}}</td>
+		            <td>{{stock.price2EarningRatio}}</td>
+		            <td>{{stock.price2BookRatio}}</td>
+		            <td>{{stock.concepts}}</td>
+		            <td>{{stock.dateFirstIPO}}</td>
+		            <td>{{stock.lastUpdatedTime}}</td>
+		        </tr>
+		    	{{/each}}
+	    	</tbody>
+	    </table>
+	</div>
+</template> 
