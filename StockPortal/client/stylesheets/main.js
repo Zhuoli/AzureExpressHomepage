@@ -30,6 +30,9 @@ Router.route('/ustock', function () {
 });
 
 Router.route('/cstock', function () {
+    this.render('navbar', {
+    to:"navbar"
+  });
   this.render('cstock', {
     to:"main"
   });

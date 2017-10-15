@@ -8,18 +8,36 @@
 </body>
 
 <template name="ApplicationLayout">
-  {{> yield "navbar"}}
-  {{> yield "main"}}
+  <div class="outline"> 
+    {{> yield "navbar"}}
+    {{> yield "main"}}
+ </div>
   
 </template>
 
 
 <template name="navbar">
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-   {{> loginButtons}}
-  </div>
-</nav>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="nav navbar-nav">
+        {{> loginButtons}}
+      </div>
+      <div class="navbar-header">
+        <p class="navbar-brand" href="#">StockPortal</p>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="page_item page-item-12">
+          <a href="http://www.cninfo.com.cn/cninfo-new/index"> Earning portal</a>
+          </li>
+          <li class="page_item page-item-13">
+            <a href="http://data.10jqka.com.cn/"> Chinese Market</a>
+        </li>
+        <li class="page_item page-item-14">
+          <a href="https://bigquant.com/"> U.S. Portal</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 

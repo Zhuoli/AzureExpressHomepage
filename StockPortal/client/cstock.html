@@ -1,30 +1,22 @@
 <template name="cstock">
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="nav navbar-nav navbar-right">
-				{{> loginButtons}}
-			</div>
-			<div class="navbar-header">
-				<p class="navbar-brand" href="#">StockPortal</p>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="page_item page-item-12">
-					<a href="http://www.cninfo.com.cn/cninfo-new/index"> 巨潮资讯</a>
-			  	</li>
-			  	<li class="page_item page-item-13">
-			    	<a href="http://data.10jqka.com.cn/"> 同花顺数据</a>
-				</li>
-				<li class="page_item page-item-14">
-					<a href="https://bigquant.com/"> 量化投资</a>
-				</li>
-			  	<li class="page_item page-item-15">
-			    	<a href="http://quant.10jqka.com.cn/platform/html/strategylib.html#/">MindGo</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
 	<div data-role="main" class="main container">
+		<div>
+		  <ul class="nav navbar-nav">
+	        <li class="page_item page-item-12">
+	          <a href="http://www.cninfo.com.cn/cninfo-new/index"> 巨潮数据</a>
+	          </li>
+	          <li class="page_item page-item-13">
+	            <a href="http://data.10jqka.com.cn/"> 同花顺数据</a>
+	        </li>
+	        <li class="page_item page-item-14">
+	          <a href="https://bigquant.com/"> 量化投资</a>
+	        </li>
+	          <li class="page_item page-item-15">
+	            <a href="http://quant.10jqka.com.cn/platform/html/strategylib.html#/">MindGo</a>
+	        </li>
+	      </ul>
+  		</div>
+  		
 		<form>
 	    	<input id="filterTable-input" data-type="search" laceholder="Search...">
 	    </form>
