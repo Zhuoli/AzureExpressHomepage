@@ -19,21 +19,22 @@
 <template name="navbar">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <div class="nav navbar-nav">
+      <div class="nav navbar-nav navbar-right">
         {{> loginButtons}}
       </div>
-      <div class="navbar-header">
-        <p class="navbar-brand" href="#">StockPortal</p>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="page_item page-item-12">
-          <a href="http://www.cninfo.com.cn/cninfo-new/index"> Earning portal</a>
-          </li>
-          <li class="page_item page-item-13">
-            <a href="http://data.10jqka.com.cn/"> Chinese Market</a>
+
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active" >
+          <a href="/">StockPortal</a>
         </li>
-        <li class="page_item page-item-14">
-          <a href="https://bigquant.com/"> U.S. Portal</a>
+        <li role="presentation">
+          <a href="/em"> Earning portal</a>
+          </li>
+          <li role="presentation">
+            <a href="/cstock"> Chinese Market</a>
+        </li>
+        <li role="presentation">
+          <a href="/ustock"> U.S. Portal</a>
         </li>
       </ul>
     </div>
