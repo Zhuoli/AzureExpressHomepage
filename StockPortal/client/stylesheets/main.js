@@ -104,10 +104,20 @@ else {
 
 
 /// Events
-Template.navbar.Events({
+Template.navbar.events({
   'click li a'(event){
     $('li').removeClass('active');
     $('this').addClass('active');
+  }
+})
+
+Template.cstock.events({
+  "keyup #js-filter"(event){
+     var rex = new RegExp($("#js-filter").val(), 'i');
+      $('tbody tr').hide();
+      $('tbody tr').filter(function () {
+          return rex.test($(this).text());
+      }).show();
   }
 })
 
