@@ -82,7 +82,7 @@ var samples = [
 /// 
 Template.cstock.helpers({
    stocks: function(){
-    var cstocks = cstockDB.find();
+    var cstocks = cstockDB.find({},{skip:0, limit: 100});
     console.log("Chiense stock size: " + cstocks.count());
     return cstocks;
     //return samples;
@@ -105,9 +105,9 @@ else {
 
 /// Events
 Template.navbar.events({
-  'click li a'(event){
+  'click .nav li'(event){
     $('li').removeClass('active');
-    $('this').addClass('active');
+    $(event.currentTarget).addClass('active');
   }
 })
 
@@ -121,3 +121,11 @@ Template.cstock.events({
   }
 })
 
+Template.cstock.onRendered(function(){
+    console.log("onRendered called.");
+    $("#myTable").tablesorter({
+    theme : 'blue',
+    // sort on the first column and second column in ascending order
+    sortList: [[0,0],[1,0]]
+  });
+})
