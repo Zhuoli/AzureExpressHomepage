@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 // this collection stores all the documents 
-this.cstockDB = new Mongo.Collection("chinesestockmarket");
+ChineseStockMarket = new Mongo.Collection("chinesestockmarket");
 // this.cstockDB.insert(
 // {
 // 	    _id:"1",
@@ -15,7 +15,7 @@ this.cstockDB = new Mongo.Collection("chinesestockmarket");
 //     lastUpdatedTime:"11-21-2017"
 //   }
 //  )
-    var cstocks = this.cstockDB.find();
+    var cstocks = ChineseStockMarket.find();
     console.log("Chiense stock size: " + cstocks.count());
 Meteor.startup(() => {
   // code to run on server at startup

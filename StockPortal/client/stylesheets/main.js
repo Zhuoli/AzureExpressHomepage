@@ -5,7 +5,7 @@ import '../main.html';
 import '../cstock.html';
 
 // this collection stores all the documents 
-this.cstockDB = new Mongo.Collection("chinesestockmarket");
+ChineseStockMarket = new Mongo.Collection("chinesestockmarket");
 
 Router.configure({
   layoutTemplate: 'ApplicationLayout'
@@ -57,7 +57,14 @@ passwordSignupFields: "USERNAME_AND_EMAIL"
 
 Template.cstock.helpers({
    stocks: function(){
-    var cstocks = cstockDB.find({},{skip:0, limit: 500});
+
+    if(Meteor.user()){
+        Meteor.subscribe("messages");
+        console.log("User logged in, subscribed!");
+    }else{
+      console.log("User not logged in, no subscription");
+    }
+    var cstocks = ChineseStockMarket.find({},{skip:0, limit: 50});
     console.log("Chinense stock size: " + cstocks.count());
     return cstocks;
     //return samples;
@@ -66,10 +73,8 @@ Template.cstock.helpers({
     retrieveUserNotification: function(){
       console.log("retrieveUserNotification...");
       if(!Meteor.userId()){
-        console.log("You need log in first.");
         return "You need log in first";
       }else{
-        console.log("You logged in but has Nothing");
         return "You logged in but has Nothing  " + Meteor.userId();
       }
     },

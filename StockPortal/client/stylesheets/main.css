@@ -16,4 +16,5 @@ th{
 }
 td{
  min-width: 90px;
+ max-width: 300px;
 }
