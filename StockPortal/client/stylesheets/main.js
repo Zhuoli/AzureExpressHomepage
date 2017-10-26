@@ -55,38 +55,40 @@ Accounts.ui.config({
 passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 
-var samples = [
-  {
-    _id:"1",
-    companyname:"jd",
-    changePercent:"7",
-    currentPrice:"5",
-    price2EarningRatio:2.5,
-    price2BookRatio:1.5,
-    concepts:2.1,
-    dateFirstIPO:"9-13-2008",
-    lastUpdatedTime:"11-21-2017"
-  },
-    {
-    _id:"6",
-    companyname:"apple",
-    changePercent:"7",
-    currentPrice:"5",
-    price2EarningRatio:2.5,
-    price2BookRatio:1.5,
-    concepts:2.1,
-    dateFirstIPO:"9-13-2008",
-    lastUpdatedTime:"11-21-2017"
-  }
-]
-
 Template.cstock.helpers({
    stocks: function(){
     var cstocks = cstockDB.find({},{skip:0, limit: 500});
     console.log("Chinense stock size: " + cstocks.count());
     return cstocks;
     //return samples;
-    } 
+    },
+
+    retrieveUserNotification: function(){
+      console.log("retrieveUserNotification...");
+      if(!Meteor.userId()){
+        console.log("You need log in first.");
+        return "You need log in first";
+      }else{
+        console.log("You logged in but has Nothing");
+        return "You logged in but has Nothing  " + Meteor.userId();
+      }
+    },
+
+    retrieveWenCai: function(id){
+          return "http://www.iwencai.com/stockpick/search?typed=1&preParams=&ts=1&f=1&qs=index_rewrite&selfsectsn=&querytype=&searchfilter=&tid=stockpick&w=" + id.substring(2);
+    },
+
+    retrieveTrend: function(id){
+      return "http://stockpage.10jqka.com.cn/" + id;
+    },
+
+    retrieveColor: function(perctange){
+      if(perctange.startsWith("+")){
+        return "color:red;";
+      }else{
+        return "color:green;";
+      }
+    }
 })
 
 

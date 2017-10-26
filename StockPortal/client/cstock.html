@@ -2,7 +2,7 @@
 	<div data-role="main" class="main container">
 		<div class="jumbotron">
 		  <h1>公告板</h1>
-		  <p>...</p>
+		  <p>{{retrieveUserNotification}}</p>
 		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 		</div>
 		<div>
@@ -41,16 +41,11 @@
 	    	</thead>
 			<tbody>    
 		      	{{#each stocks}}
-		        <!-- - var colorPrice = "black" -->
-<!-- 		        if stock.changePercent && stock.changePercent.startsWith("+")
-		          - var colorPrice = "red"
-		        if stock.changePercent && stock.changePercent.startsWith("-")
-		          - var colorPrice = 'green' -->
+
 		        <tr>  
-		            <!-- <td title="问财大数据"><a href='http://www.iwencai.com/stockpick/search?typed=1&preParams=&ts=1&f=1&qs=index_rewrite&selfsectsn=&querytype=&searchfilter=&tid=stockpick&w=' + stock._id.substring(2)>{{_id}}</a></td> -->
-		            <td title="问财大数据">{{_id}}</td>
-		            <td title="股票走势">{{companyname}}</td>
-		            <td>{{changePercent}}</td>
+		            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{_id}}</a></td>
+		            <td title="股票走势"><a href={{retrieveTrend _id}}>{{companyname}}</a></td>
+		            <td style={{retrieveColor changePercent}}>{{changePercent}}</td>
 		            <td>{{currentPrice}}</td>
 		            <td>{{price2EarningRatio}}</td>
 		            <td>{{price2BookRatio}}</td>
