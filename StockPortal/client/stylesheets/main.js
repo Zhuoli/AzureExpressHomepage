@@ -126,6 +126,7 @@ Template.cstock.onRendered(function(){
     $("#myTable").tablesorter({
     theme : 'blue',
     // sort on the first column and second column in ascending order
-    sortList: [[0,0],[1,0]]
+    sortList: [[0,0],[1,0]],
+    widgets : [ 'zebra', 'columns', "filter" ]
   });
 })

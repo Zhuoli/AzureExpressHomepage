@@ -6,7 +6,7 @@
     <ProjectGuid>{2765f263-7e07-4d5f-a8c9-c6800759abd5}</ProjectGuid>
     <ProjectHome>bundle\</ProjectHome>
     <ProjectView>ShowAllFiles</ProjectView>
-    <StartupFile>main.js</StartupFile>
+    <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
@@ -16,13 +16,17 @@
     <Environment>MONGO_URL=mongodb://127.0.0.1:3001/meteor
 PORT=8080
 ROOT_URL=http://localhost:8080</Environment>
+    <NameOfLastUsedPublishProfile>ZhuoliAzureExpressVS - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="..\ZhuoliAzureExpressVS - Web Deploy.pubxml">
+      <Link>ZhuoliAzureExpressVS - Web Deploy.pubxml</Link>
+    </Content>
     <Content Include=".node_version.txt" />
     <Content Include="star.json" />
-    <Compile Include="main.js" />
+    <Compile Include="app.js" />
     <Content Include="server\.bundle_version.txt" />
     <Content Include="programs\server\config.json" />
     <Content Include="programs\server\npm-rebuilds.json" />
@@ -105,6 +109,8 @@ ROOT_URL=http://localhost:8080</Environment>
     <Compile Include="programs\server\packages\underscore.js" />
     <Compile Include="programs\server\packages\webapp-hashing.js" />
     <Compile Include="programs\server\packages\webapp.js" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="programs" />

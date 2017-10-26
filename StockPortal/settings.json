@@ -1,0 +1,9 @@
+{
+	"galaxy.meteor.com": {
+	  "env":{
+		"ROOT_URL":"http://www.zhuoliliang.com",
+		"DEPLOY_HOSTNAME": "eu-west-1.galaxy-deploy.meteor.com",
+		"MONGO_URL":"mongodb://zhuoli:tGVT}77mU)xHqB@stockmarket-shard-00-00-bcpbx.mongodb.net:27017,stockmarket-shard-00-01-bcpbx.mongodb.net:27017,stockmarket-shard-00-02-bcpbx.mongodb.net:27017/stockdb?ssl=true&replicaSet=stockmarket-shard-0&authSource=admin"
+	}
+}
+}
