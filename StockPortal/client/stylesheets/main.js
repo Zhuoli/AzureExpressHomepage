@@ -79,11 +79,11 @@ var samples = [
     lastUpdatedTime:"11-21-2017"
   }
 ]
-/// 
+
 Template.cstock.helpers({
    stocks: function(){
-    var cstocks = cstockDB.find({},{skip:0, limit: 100});
-    console.log("Chiense stock size: " + cstocks.count());
+    var cstocks = cstockDB.find({},{skip:0, limit: 500});
+    console.log("Chinense stock size: " + cstocks.count());
     return cstocks;
     //return samples;
     } 
