@@ -30,10 +30,10 @@
             {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center" onClick=clickEvent}}
 			<table id="myTable" class="table">
 				<thead>
-		  			<tr role="row" class="tablesorter-headerRow ">
-		    			<th>股票代码</th>
+		  			<tr role="row">
+		    			<th id="stock-symbol" class="symbol-desc">股票代码</th>
 		    			<th>股票名称</th>
-		    			<th>涨跌幅</th>
+		    			<th id="stock-quote" class="stock-quote-desc">涨跌幅</th>
 		    			<th>现价</th>
 		    			<th>PE</th>
 		    			<th>PB</th>
@@ -48,7 +48,7 @@
 			        <tr>  
 			            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{_id}}</a></td>
 			            <td title="股票走势"><a href={{retrieveTrend _id}}>{{companyname}}</a></td>
-			            <td style={{retrieveColor changePercent}}>{{changePercent}}</td>
+			            <td style={{retrieveColor changePercent}}>{{changePercent}}%</td>
 			            <td>{{currentPrice}}</td>
 			            <td>{{price2EarningRatio}}</td>
 			            <td>{{price2BookRatio}}</td>

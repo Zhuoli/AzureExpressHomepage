@@ -82,7 +82,7 @@ Template.cstock.helpers({
     },
 
     retrieveColor: function(perctange){
-      if(perctange.startsWith("+")){
+      if(perctange > 0){
         return "color:red;";
       }else{
         return "color:green;";
@@ -119,6 +119,34 @@ Template.cstock.events({
       $('tbody tr').filter(function () {
           return rex.test($(this).text());
       }).show();
+  },
+
+  "click .symbol-desc"(event){
+    $(event.currentTarget).removeClass('symbol-desc');
+    $(event.currentTarget).addClass('symbol-asc');
+    Template.instance().pagination.sort({_id:-1});
+    console.log('you clicked symbol-desc: ' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  "click .symbol-asc"(event){
+    $(event.currentTarget).removeClass('symbol-asc');
+    $(event.currentTarget).addClass('symbol-desc');
+    Template.instance().pagination.sort({_id:1});
+    console.log('you clicked symbol-asc: ' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  "click .stock-quote-desc"(event){
+    $(event.currentTarget).removeClass('stock-quote-desc');
+    $(event.currentTarget).addClass('stock-quote-asc');
+    Template.instance().pagination.sort({changePercent:-1});
+    console.log('you clicked stock-quote-desc: ' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  "click .stock-quote-asc"(event){
+    $(event.currentTarget).removeClass('stock-quote-asc');
+    $(event.currentTarget).addClass('stock-quote-desc');
+    Template.instance().pagination.sort({changePercent:1});
+    console.log('you clicked stock-quote-asc ' + JSON.stringify(Template.instance().pagination.sort()));
   }
 })
 
@@ -136,9 +164,10 @@ Template.cstock.onRendered(function(){
 Template.cstock.onCreated(function () {
     this.pagination = new Meteor.Pagination(ChineseStockMarket, {
         sort: {
-            _id: -1
+            _id: 1
         }
     });
+    this.pagination.perPage(50);
 });
 
 Template.cstock.helpers({
@@ -149,7 +178,6 @@ Template.cstock.helpers({
         return Template.instance().pagination;
     },
     documents: function () {
-        Template.instance().pagination.perPage(50);
         return Template.instance().pagination.getPage();
     },
     // optional helper used to return a callback that should be executed before changing the page
