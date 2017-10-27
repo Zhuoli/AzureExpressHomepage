@@ -1,20 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-// this collection stores all the documents 
-ChineseStockMarket = new Mongo.Collection("chinesestockmarket");
-// this.cstockDB.insert(
-// {
-// 	    _id:"1",
-//     companyname:"jd",
-//     changePercent:"7",
-//     currentPrice:"5",
-//     price2EarningRatio:2.5,
-//     price2BookRatio:1.5,
-//     concepts:2.1,
-//     dateFirstIPO:"9-13-2008",
-//     lastUpdatedTime:"11-21-2017"
-//   }
-//  )
+
     var cstocks = ChineseStockMarket.find();
     console.log("Chiense stock size: " + cstocks.count());
 Meteor.startup(() => {
