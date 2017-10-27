@@ -26,45 +26,42 @@
 		<form>
 	    	<input id="js-filter" type="text" placeholder="Search...">
 	    </form>
-		<table id="myTable" class="table">
-			<thead>
-	  			<tr role="row" class="tablesorter-headerRow ">
-	    			<th>股票代码</th>
-	    			<th>股票名称</th>
-	    			<th>涨跌幅</th>
-	    			<th>现价</th>
-	    			<th>PE</th>
-	    			<th>PB</th>
-	    			<th>板块概念</th>
-	    			<th>上市日期</th>
-	    			<th>更新日期</th>
-	    		</tr>
-	    	</thead>
-			<tbody>    
-		      	{{#each stocks}}
+        {{#if isReady}}
+            {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center" onClick=clickEvent}}
+			<table id="myTable" class="table">
+				<thead>
+		  			<tr role="row" class="tablesorter-headerRow ">
+		    			<th>股票代码</th>
+		    			<th>股票名称</th>
+		    			<th>涨跌幅</th>
+		    			<th>现价</th>
+		    			<th>PE</th>
+		    			<th>PB</th>
+		    			<th>板块概念</th>
+		    			<th>上市日期</th>
+		    			<th>更新日期</th>
+		    		</tr>
+		    	</thead>
+				<tbody>    
+			      	{{#each documents}}
 
-		        <tr>  
-		            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{_id}}</a></td>
-		            <td title="股票走势"><a href={{retrieveTrend _id}}>{{companyname}}</a></td>
-		            <td style={{retrieveColor changePercent}}>{{changePercent}}</td>
-		            <td>{{currentPrice}}</td>
-		            <td>{{price2EarningRatio}}</td>
-		            <td>{{price2BookRatio}}</td>
-		            <td>{{concepts}}</td>
-		            <td>{{dateFirstIPO}}</td>
-		            <td>{{lastUpdatedTime}}</td>
-		        </tr>
-		    	{{/each}}
-	    	</tbody>
-	    </table>
-	    <nav aria-label="Page navigation example">
-		  <ul class="pagination">
-		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		    <li class="page-item"><a class="page-link" href="#">1</a></li>
-		    <li class="page-item"><a class="page-link" href="#">2</a></li>
-		    <li class="page-item"><a class="page-link" href="#">3</a></li>
-		    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-		  </ul>
-		</nav>
-	</div>
-</template> 
+			        <tr>  
+			            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{_id}}</a></td>
+			            <td title="股票走势"><a href={{retrieveTrend _id}}>{{companyname}}</a></td>
+			            <td style={{retrieveColor changePercent}}>{{changePercent}}</td>
+			            <td>{{currentPrice}}</td>
+			            <td>{{price2EarningRatio}}</td>
+			            <td>{{price2BookRatio}}</td>
+			            <td>{{concepts}}</td>
+			            <td>{{dateFirstIPO}}</td>
+			            <td>{{lastUpdatedTime}}</td>
+			        </tr>
+			    	{{/each}}
+		    	</tbody>
+		    </table>
+            {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center" onClick=clickEvent}}
+        {{else}}
+            Loading...
+        {{/if}}
+    </div>
+</template>

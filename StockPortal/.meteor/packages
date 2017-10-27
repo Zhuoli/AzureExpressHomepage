@@ -23,3 +23,5 @@ accounts-ui@1.1.9
 accounts-password@1.4.0
 session@1.1.7
 andrei:tablesorter
+kurounin:pagination
+kurounin:pagination-blaze

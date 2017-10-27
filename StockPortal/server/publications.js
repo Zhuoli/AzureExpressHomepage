@@ -1,3 +1,7 @@
+import { publishPagination } from 'meteor/kurounin:pagination';
+
+publishPagination(ChineseStockMarket);
+
 
 // public sets of editing users
 Meteor.publish("messages", function(){
