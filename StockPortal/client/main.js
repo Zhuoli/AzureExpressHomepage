@@ -114,11 +114,7 @@ Template.navbar.events({
 
 Template.cstock.events({
   "keyup #js-filter"(event){
-     var rex = new RegExp($("#js-filter").val(), 'i');
-      $('tbody tr').hide();
-      $('tbody tr').filter(function () {
-          return rex.test($(this).text());
-      }).show();
+      Template.instance().pagination.filters({companyname: {$regex: $("#js-filter").val(), $options: 'i'}});
   },
 
   "click .symbol-desc"(event){
