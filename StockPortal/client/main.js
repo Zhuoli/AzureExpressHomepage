@@ -78,6 +78,9 @@ Template.cstock.helpers({
     },
 
     retrieveTrend: function(id){
+      if(id.toLowerCase().startsWith('sh') || id.toLowerCase().startsWith('sz')){
+        id=id.substring(2);
+      }
       return "http://stockpage.10jqka.com.cn/" + id;
     },
 
