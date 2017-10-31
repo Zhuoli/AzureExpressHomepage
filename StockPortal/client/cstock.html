@@ -38,17 +38,17 @@
 		    			<th>PE</th>
 		    			<th>PB</th>
 		    			<th>板块概念</th>
-		    			<th>上市日期</th>
-		    			<th>更新日期</th>
+		    			<th id="stock-ipo" class="stock-ipo-desc">上市日期</th>
+		    			<th id="stock-lastupdatedate" class="sock-date-desc">更新日期</th>
 		    		</tr>
 		    	</thead>
 				<tbody>    
 			      	{{#each documents}}
 
 			        <tr>  
-			            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{_id}}</a></td>
-			            <td title="股票走势"><a href={{retrieveTrend _id}}>{{companyname}}</a></td>
-			            <td style={{retrieveColor changePercent}}>{{changePercent}}%</td>
+			            <td title="雪球"><a href={{retrieveXueqiu _id}}>{{_id}}</a></td>
+			            <td title="问财大数据"><a href={{retrieveWenCai _id}}>{{companyname}}</a></td>
+			            <td title="股票走势" ><a style={{retrieveColor changePercent}} href={{retrieveTrend _id}}>{{changePercent}}%</a></td>
 			            <td>{{currentPrice}}</td>
 			            <td>{{price2EarningRatio}}</td>
 			            <td>{{price2BookRatio}}</td>

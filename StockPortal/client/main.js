@@ -84,6 +84,10 @@ Template.cstock.helpers({
       return "http://stockpage.10jqka.com.cn/" + id;
     },
 
+    retrieveXueqiu: function(id){
+      return "https://xueqiu.com/S/" + id;
+    },
+
     retrieveColor: function(perctange){
       if(perctange > 0){
         return "color:red;";
@@ -120,6 +124,7 @@ Template.cstock.events({
       Template.instance().pagination.filters({companyname: {$regex: $("#js-filter").val(), $options: 'i'}});
   },
 
+  // Symbol sorting
   "click .symbol-desc"(event){
     $(event.currentTarget).removeClass('symbol-desc');
     $(event.currentTarget).addClass('symbol-asc');
@@ -134,6 +139,7 @@ Template.cstock.events({
     console.log('you clicked symbol-asc: ' + JSON.stringify(Template.instance().pagination.sort()));
   },
 
+  // Change perctange sorting 
   "click .stock-quote-desc"(event){
     $(event.currentTarget).removeClass('stock-quote-desc');
     $(event.currentTarget).addClass('stock-quote-asc');
@@ -146,7 +152,37 @@ Template.cstock.events({
     $(event.currentTarget).addClass('stock-quote-desc');
     Template.instance().pagination.sort({changePercent:1});
     console.log('you clicked stock-quote-asc ' + JSON.stringify(Template.instance().pagination.sort()));
-  }
+  },
+
+  // Last update date sorting 
+  "click .sock-date-desc"(event){
+    $(event.currentTarget).removeClass('sock-date-desc');
+    $(event.currentTarget).addClass('sock-date-asc');
+    Template.instance().pagination.sort({lastUpdatedTime:-1});
+    console.log('you clicked sock-date-desc' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  "click .sock-date-asc"(event){
+    $(event.currentTarget).removeClass('sock-date-asc');
+    $(event.currentTarget).addClass('sock-date-desc');
+    Template.instance().pagination.sort({lastUpdatedTime:1});
+    console.log('you clicked symbol-date-asc' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  // IPO date sorting
+    "click .stock-ipo-desc"(event){
+    $(event.currentTarget).removeClass('stock-ipo-desc');
+    $(event.currentTarget).addClass('stock-ipo-asc');
+    Template.instance().pagination.sort({dateFirstIPO:-1});
+    console.log('you clicked stock-ipo-desc' + JSON.stringify(Template.instance().pagination.sort()));
+  },
+
+  "click .stock-ipo-asc"(event){
+    $(event.currentTarget).removeClass('stock-ipo-asc');
+    $(event.currentTarget).addClass('stock-ipo-desc');
+    Template.instance().pagination.sort({dateFirstIPO:1});
+    console.log('you clicked stock-ipo-asc' + JSON.stringify(Template.instance().pagination.sort()));
+  },
 })
 
 Template.cstock.onRendered(function(){
